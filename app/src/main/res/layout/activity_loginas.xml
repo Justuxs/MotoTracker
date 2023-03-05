@@ -5,31 +5,137 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:padding="100dp">
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/messageTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:text="Create new account"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="20dp" />
+
+
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameInputLayout"
+        android:id="@+id/nameInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="Username"
-        app:helperText="*Required"
-        app:helperTextTextColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:startIconDrawable="@drawable/person"
+        android:layout_height="wrap_content"
+        android:hint="Name"
         app:counterEnabled="true"
         app:counterMaxLength="20"
         app:endIconMode="clear_text"
-
-        >
+        app:helperText=""
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/messageTV"
+        app:startIconDrawable="@drawable/name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:maxLength="20"
-            android:id="@+id/usernameET"
+            android:id="@+id/nameET"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textEmailSubject"
+            android:maxLength="20" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:endIconMode="password_toggle"
+        app:helperText=""
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
+
+        app:startIconDrawable="@drawable/password"
+        tools:layout_editor_absoluteX="100dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="20" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        app:counterEnabled="false"
+        app:counterMaxLength="50"
+        app:endIconMode="clear_text"
+        app:helperText=""
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
+
+        app:startIconDrawable="@drawable/email"
+>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:maxLength="20" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        app:counterEnabled="false"
+        app:counterMaxLength="50"
+        app:endIconMode="clear_text"
+        app:helperText=""
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputLayout"
+        app:prefixText="+370"
+        app:startIconDrawable="@drawable/phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|phone"
+            android:maxLength="8" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/registrB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:onClick="onRegisterClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneInputLayout" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TextView txtWelcome = findViewById(R.id.txtWelcome);
+        TextView txtWelcome = findViewById(R.id.txtWelcome);
         //txtWelcome.setText("Welcome to Moto Tracker");
     }
 
