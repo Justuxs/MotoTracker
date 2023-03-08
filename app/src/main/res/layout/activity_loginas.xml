@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".activities.LoginActivity"
     android:padding="20dp">
 
     <TextView
         android:id="@+id/messageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:text="Create new account"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -105,7 +105,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="Phone"
         app:counterEnabled="false"
         app:counterMaxLength="50"
         app:endIconMode="clear_text"
@@ -127,7 +127,7 @@
 
     <Button
         style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:id="@+id/registrB"
+        android:id="@+id/registerB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"

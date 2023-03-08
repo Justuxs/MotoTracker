@@ -5,8 +5,7 @@ import java.util.regex.Pattern;
 
 public class Validator {
 
-    private static final String passwordRegex = "^(?=.*[0-9])"
-            + "(?=.*[a-z])(?=.*[A-Z])";//+ "(?=.*[@#$%^&+=])" + "(?=\\S+$).{8,20}$";
+    private static final String passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";//+ "(?=.*[@#$%^&+=])" + "(?=\\S+$).{8,20}$";
     private static final String phoneRegex = "^[0-9]{8,8}$";
 
     private static final String emailRegex= "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";

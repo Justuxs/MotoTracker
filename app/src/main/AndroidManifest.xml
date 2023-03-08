@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,14 +13,25 @@
         android:theme="@style/Theme.MotoTracker_2"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.MotoTracker_2" />
+
+        <service
+            android:name=".ReportService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

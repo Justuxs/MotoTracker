@@ -5,40 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scaleX="1"
-    tools:context=".MainActivity"
-    android:padding="100dp">
+    tools:context=".activities.MainActivity"
+    android:padding="20dp">
 
 
     <TextView
-        android:id="@+id/txtWelcome"
+        android:id="@+id/messageTV_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Welcome"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout_main"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        app:endIconMode="password_toggle"
+        app:helperText=""
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/emailInputLayout_main"
+
+        app:startIconDrawable="@drawable/password"
+        tools:layout_editor_absoluteX="100dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordET_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="20" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLayout_main"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        app:counterEnabled="false"
+        app:counterMaxLength="50"
+        app:endIconMode="clear_text"
+        app:helperText=""
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/messageTV_main"
+        app:startIconDrawable="@drawable/email"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailET_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:maxLength="20" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Sing up"
+        android:text="Sign up"
+        android:onClick="onSignClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout_main" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/loginB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
+        android:layout_below="@id/signB"
         android:onClick="onLoginClick"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@id/signB" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
